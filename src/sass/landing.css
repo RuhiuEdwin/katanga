@@ -1,0 +1,9 @@
+
+.hero-wrapper {
+    background: rgba( 76, 181, 254, .5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
