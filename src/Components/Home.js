@@ -1,36 +1,41 @@
 import React from 'react'
 import '../sass/home.css'
+import { NavLink } from 'react-router-dom'
 import refinery from "../images/refinery.jpg"
 import bullions from "../images/bullions.jpg"
 import minting from "../images/minting.png"
 import smelt from "../images/smelt.jpg"
 import assaying from "../images/assaying.jpg"
 import separation from "../images/separation.jpg"
+import {MapContainer} from './Map'
 
 
 const Home = () => {
+    // Use object destructing, so you don't need to remember the exact order
+
   return (
     <div>
         <div className='h-screen text-center main hero'>
             <h1 className='font-black text-white'> KATANGA GOLDFIELDS</h1>
-            <p className='text-white'>QUALITY ASSURED</p>
+            <p className='text-white'>QUALITY ASSURED</p>   
             <div className='button'>
-                <button className='one'>
+                <NavLink exact to='/services' className='one'>
                     OUR SERVICES
-                </button>
-                <button className='two'>
+                </NavLink>
+                <NavLink exact to='/contact' className='two'>
                     CONTACT US
-                </button>
+                </NavLink>
             </div>
         </div>
-        <div className='about hero'>
+        <div className= "about hero">
            <h1 className='text-white font-black title'>WHO WE ARE</h1>
-           <p className=''>
-
+           <p className='about-info'>
+            We are a rare minerals product and associated service provider fully affiliated with DMCC and committed to quality and exceptional service. 
+            Driven by commitment to excellence and client satisfaction, we have grown to a local powerhouse in the rare minerals industry with a wide range of clients from all corners of the world
            </p>
-           <button className='aboutbtn'>
+           <NavLink exact to='/about' className='aboutbtn'>
                MORE ABOUT US
-           </button>
+           </NavLink>
         </div>
         <div className='services hero'>
             <div className='header text-center'>
@@ -119,9 +124,9 @@ const Home = () => {
                    </div>
                </div>
            </div>
-           <button className='link'>
+           <NavLink exact to='/services' className='link'>
                ALL SERVICES
-           </button>
+           </NavLink>
         </div>
         <div className='contact hero'>
             <div className='contact-main text-center'>
@@ -163,13 +168,10 @@ const Home = () => {
                 </div>
             </div>
             <div className='map'>
-            <iframe className='mapiframe'
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.436604552237!2d26.735981514802837!3d-11.0058323921661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1971398c74a5758b%3A0x12a352410f5d8969!2sKatanga!5e0!3m2!1sen!2ske!4v1648215418390!5m2!1sen!2ske">
-
-                </iframe>
+        <MapContainer/>
             </div>
-        </div>
+    </div>
   )
 }
 
-export default Home
+export default Home;

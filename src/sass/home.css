@@ -15,6 +15,15 @@
 .about{
     padding: 50px 10px;
 }
+.about-info{
+    text-align: center;
+    color: var(--white);
+}
+.zoom{
+    opacity: 1;
+    transform: scale(100%);
+    transition: 2s;
+}
 .services{
     padding: 50px 10px;
 }
@@ -60,6 +69,7 @@
     background: var(--gold);
     color: var(--white);
 }
+.about-info,
 .service-info{
     width: 100%;
     max-width: 700px;
@@ -91,6 +101,8 @@
 }
 .card-details{
     width: 250px;
+    font-weight: lighter;
+    color: var(--white);
 }
 .link{
     margin: 50px 0;
@@ -147,6 +159,7 @@ form input{
 .submit:hover{
     box-shadow: 5px 5px 10px #ccc;
 }
+.about-wrapper,
 .contact-wrapper{
     display: flex;
     flex-direction: column;
@@ -154,12 +167,23 @@ form input{
     align-items: center;
     gap: 1rem;
 }
+.about-wrapper{
+    margin: 50px 0;
+}
 .phone{
     background: var(--gold);
     padding: 40px 10px;
     border-radius: 5px;
     z-index: 20;
     width: 250px;
+}
+.about-card{
+    background: var(--white);
+    padding: 40px 10px;
+    border-radius: 5px;
+    z-index: 20;
+    width: 250px;
+    text-align: center;
 }
 .contact-info{
     width:80%;
@@ -175,9 +199,11 @@ form input{
 }
 
 @media only screen and (min-width: 600px) {
+    .about-wrapper,
     .contact-wrapper{
         flex-direction: row;
     }
+    .about-card,
     .phone{
         width: 300px;
     }
@@ -190,10 +216,6 @@ form input{
     }
     .map{
         height: 50vh;
-    }
-    .mapiframe{
-        width: 100%;
-        height:50vh;
     }
     form{
         padding: 40px;

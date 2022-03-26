@@ -25,8 +25,11 @@ const Header = () => {
   return (
     <div> 
         <nav>
-            <img className='nav-logo' src={nav} alt=""/>
-      {(toggleMenu || screenWidth > 800) && (
+          <NavLink to='/'>
+          <img className='nav-logo' src={nav} alt=""/>
+          </NavLink>           
+          <CgMenuRight className='bars nav-inactive' onClick={toggleNav}/>
+      {(toggleMenu || screenWidth > 600) && (
             <div className='navlinks'>
               <li>
                 <NavLink activeClassName='active' className='nav-link' exact to='/'>
@@ -48,9 +51,6 @@ const Header = () => {
                   <p className='nav-title'>Contact Us</p>
                 </NavLink>
               </li>
-              <button onClick={toggleNav} className="sidebar-btn">              
-              <CgMenuRight className='bars nav-inactive'/>
-              </button> 
               <button onClick={toggleNav} className="sidebar-btn">
                 <ImCross className='nav-active bars'/>
               </button>
